@@ -32,14 +32,16 @@
       </div>
     </nav>
     <div class="container">
-      <h1>Welcome<% if (user) { %> <%= user.name %><% } %>!</h1>
+      <h1>Welcome</h1>
       <div class="container">
-        <% if (user) { %>
-          <p><a href="/students">Student Portal</a></p>
-          <p><a href="/professors">Professor Portal</a></p>
-        <% } else { %>
-          <p><strong>New here?</strong> <a href="/signup">Make an account</a></p>
+        <% if (error) { %>
+          <p><%= error %></p>
         <% } %>
+        <form action="/<%= accountType %>/login" method="POST">
+          <p><label>Email: <input type="text" name="email"></label></p>
+          <p><label>Password: <input type="text" name="password"></label></p>
+          <p><input type="submit" value="Log in as a <%= loginType %>"></p>
+        </form>
       </div>
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

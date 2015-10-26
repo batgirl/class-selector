@@ -32,14 +32,11 @@
       </div>
     </nav>
     <div class="container">
-      <h1>Welcome<% if (user) { %> <%= user.name %><% } %>!</h1>
+      <h1>Welcome</h1>
       <div class="container">
-        <% if (user) { %>
-          <p><a href="/students">Student Portal</a></p>
-          <p><a href="/professors">Professor Portal</a></p>
-        <% } else { %>
-          <p><strong>New here?</strong> <a href="/signup">Make an account</a></p>
-        <% } %>
+        <p>Welcome <%= user.name %>!</p>
+        <p><a href="/professors/courses/new">Create a new course</a></p>
+        <p><a href="/professors/edit">Edit your account</a></p>
       </div>
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
